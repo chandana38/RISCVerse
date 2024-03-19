@@ -17,12 +17,12 @@ References:
 
 
 Mentors:
-Rehan Nasar
-Sanganabasu Herur (211EC245)
+Rehan Nasar,
+Sanganabasu Herur (211EC245),
 L Chandana (211EE235)
 
 Mentees:
-Chinmayee Nagaraj (221EC212)
+Chinmayee Nagaraj (221EC212),
 Suchet Nayak (221EE254)
 
 
