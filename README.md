@@ -6,6 +6,7 @@ The RISC-V architecture is an open-standard instruction set architecture (ISA) a
 
 Methodology & Implementation:
 The initial phase of the project involved designing hardware capable of executing the integer instructions outlined in the RV32I Base Integer Instruction Set. The design of a dedicated datapath for each instruction within the RV32I set was undertaken. This involved identifying the functional units required for each instruction and connecting them together. The individual datapaths were then combined to form the complete datapath. Additionally, a 5-stage pipelined architecture was adopted to enhance efficiency and throughput.
+![image](https://github.com/chandana38/RISCVerse/assets/156425665/c20784db-3261-4af6-b87e-e4ba2a0c04bc)
 
 Results:
 
