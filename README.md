@@ -14,6 +14,8 @@ Results:
 Functional verification was conducted using module-specific testbenches for each pipeline stage, ensuring the correct operation of individual modules and their interactions. As of now, only a single core has been developed. Future plans include expanding functionality by adding M, F, and A extensions, and transitioning to a multicore design. 
 Currently, thorough testing of R and I type instructions has been completed using Verilog testbenches in the Xilinx environment, with waveform analysis verified to validate their functionality.
 
+Here's a plot showing the result of the operations: add, sub, sll, xor, srl, or, and 
+
 ![image](output.jpeg)
 
 Conclusion:
