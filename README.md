@@ -14,6 +14,7 @@ Results:
 Functional verification was conducted using module-specific testbenches for each pipeline stage, ensuring the correct operation of individual modules and their interactions. As of now, only a single core has been developed. Future plans include expanding functionality by adding M, F, and A extensions, and transitioning to a multicore design. 
 Currently, thorough testing of R and I type instructions has been completed using Verilog testbenches in the Xilinx environment, with waveform analysis verified to validate their functionality.
 
+![image](output.jpeg)
 
 Conclusion:
 By utilizing RISC-V principles and pipelining techniques, we've demonstrated improved throughput and performance. Our future efforts will focus on expanding functionality, transitioning to multicore designs, and optimizing the pipeline for efficiency. These steps aim to contribute to the ongoing evolution of processor architectures, meeting the demands of modern computing systems.
