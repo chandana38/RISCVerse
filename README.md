@@ -31,7 +31,6 @@ References:
 
 
 Mentors:
-Rehan Nasar,
 Sanganabasu Herur (211EC245),
 L Chandana (211EE235)
 
