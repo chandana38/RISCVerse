@@ -29,15 +29,3 @@ module Fetch(
 endmodule
 
 
-module Instruction_Memory(rst,address,read_data);
-
-  input rst;
-  input [31:0]address;
-  output [31:0] read_data;
-
-  reg [31:0] mem [1023:0];
-
-  assign read_data = (rst == 1'b0) ? 32'h00000000 : mem[address[31:2]];
-
-endmodule
-
