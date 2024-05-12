@@ -47,4 +47,4 @@ Suchet Nayak (221EE254)
 ## Acknowledgment: 
 We extend our gratitude to Abhav S Velidi for his invaluable assistance throughout the design process.
 
-*© 2024 RISC-V Core Implementation Team. All rights reserved.*
+*© 2024 RISCVerse Core Implementation Team. All rights reserved.*
