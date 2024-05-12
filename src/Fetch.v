@@ -1,64 +1,30 @@
 `timescale 1ns / 1ps
-module Fetch(clk, rst, pc_select_execute, pc_target_execute, instruction_decode, pc_decode, next_pc_decode);
+module Fetch(
+    input clk, rst,
+    input pc_select_execute,
+    input [31:0] pc_target_execute,
+    output reg [31:0] instruction_fetch,
+    output reg [31:0] pc_fetch, next_pc_fetch
+);
 
-    // Declare input & outputs
-    input clk, rst;
-    input pc_select_execute;
-    input [31:0] pc_target_execute;
-    output [31:0] instruction_decode;
-    output [31:0] pc_decode, next_pc_decode;
+    reg [31:0] instr_mem [1023:0];
 
-    // Declaring interim wires
-    wire [31:0] pc_fetch, PCF, next_pc_fetch;
-    wire [31:0] instruction_fetch;
-
-    // Declaration of Register
-    reg [31:0] instruction_fetch_reg;
-    reg [31:0] pc_fetch_reg, next_pc_fetch_reg;
-
-    //Program Counter MUX 
-    assign pc_fetch = pc_select_execute ? next_pc_fetch : pc_target_execute;
-
-    // Declare PC Counter Register         
-    always @(posedge clk)
-    begin
-        if(rst == 1'b0)
-            pc_fetch_reg <= {32{1'b0}};
-        else
-            pc_fetch_reg <= pc_fetch;
-    end
-    
-    assign PCF = pc_fetch_reg;
-
-    // Declare Instruction Memory
-    Instruction_Memory inst_mem(
-                .rst(rst),
-                .address(PCF),
-                .read_data(instruction_fetch)
-                );
-
-    assign next_pc_fetch = PCF + 32'h00000004;
-    
-    // Fetch Cycle Register Logic
     always @(posedge clk or negedge rst) begin
-        if(rst == 1'b0) begin
-            instruction_fetch_reg <= 32'h00000000;
-            pc_fetch_reg <= 32'h00000000;
-            next_pc_fetch_reg <= 32'h00000000;
-        end
-        else begin
-            instruction_fetch_reg <= instruction_fetch;
-            pc_fetch_reg <= PCF;
-            next_pc_fetch_reg <= next_pc_fetch;
+        if (!rst) begin
+            instruction_fetch <= 32'h0;
+            pc_fetch <= 32'h0;
+            next_pc_fetch <= 32'h0;
+        end else begin
+            if (pc_select_execute == 0) begin
+                pc_fetch <= next_pc_fetch;
+                next_pc_fetch <= next_pc_fetch + 4;
+            end else begin
+                pc_fetch <= pc_target_execute;
+                next_pc_fetch <= pc_fetch + 4;
+            end
+            instruction_fetch <= instr_mem[pc_fetch];
         end
     end
-
-
-    // Assigning Registers Value to the Output port
-    assign  instruction_decode = (rst == 1'b0) ? 32'h00000000 : instruction_fetch_reg;
-    assign  pc_decode = (rst == 1'b0) ? 32'h00000000 : pc_fetch_reg;
-    assign  next_pc_decode = (rst == 1'b0) ? 32'h00000000 : next_pc_fetch_reg;
-
 
 endmodule
 
