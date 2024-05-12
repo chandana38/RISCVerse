@@ -1,4 +1,4 @@
-Aim:
+*Aim*
 The aim of this project is to design and implement a pipelined RISC-V 32-bit core with the Integer Base Instruction Set (RV32I).
 
 Introduction:
