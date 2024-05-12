@@ -24,8 +24,11 @@ By utilizing RISC-V principles and pipelining techniques, we've demonstrated imp
 
 # References: 
 [1] David A. Patterson and John L. Hennessy, *Computer Organization and Design: The Hardware/Software Interface: RISC-V Edition*, Elsevier, 2020.
+
 [2] RISC-V Technical Specifications, *RISC-V Specifications*. [Online]. Available: https://riscv.org/technical/specifications/
+
 [3] NPTEL Course, *Computer Architecture* by Prof. Madhu Mutyam. [Online]. Available: https://archive.nptel.ac.in/courses/106/106/106106134/
+
 [4] RISC-V Documentation, *Shakti Documentation*. [Online]. Available: https://shakti.org.in/documentation.html
 
 # Team Members
@@ -37,6 +40,7 @@ L Chandana (211EE235)
 Chinmayee Nagaraj (221EC212),
 Suchet Nayak (221EE254)
 
-## Acknowledgment: We extend our gratitude to Abhav S Velidi for his invaluable assistance throughout the design process.
+## Acknowledgment: 
+We extend our gratitude to Abhav S Velidi for his invaluable assistance throughout the design process.
 
 *© 2024 RISC-V Core Implementation Team. All rights reserved.*
