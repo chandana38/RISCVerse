@@ -1,5 +1,9 @@
 # RISCVerse64
-*Aim*: The aim of this project is to design and implement a pipelined RISC-V 32-bit core with the Integer Base Instruction Set (RV32I).
+*Aim*: The aim of this project is to design and implement a pipelined RISC-V 64-bit core with the Integer Base Instruction Set (RV64I,RV32I) along with additional extensions for Multiplication (M), Floating-point Arithmetic (F), Atomic Operations (A), and Compressed Instructions (Z)
+
+By incorporating these extensions, the core will support a wider range of operations, improve computational efficiency, and enable more complex applications to be executed.
+
+
 
 # Introduction:
 The RISC-V architecture is an open-standard instruction set architecture (ISA) adhering to established reduced instruction set computer (RISC) principles. This project specifically targets the 32-bit variant, RV32I. The "I" standard extension incorporates the integer instruction set, encompassing integer computational instructions, load/store instructions, and control flow instructions. The processor pipeline employs a five-stage design, consisting of fetch, decode, execute, memory access, and writeback stages.
