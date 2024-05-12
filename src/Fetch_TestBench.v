@@ -25,12 +25,13 @@ module Fetch_testbench(
    clk = ~clk;
    #10;
    end
-   
-    initial begin 
+/*   
+initial begin 
    
    $dumpfile("dump.vcd");
    $dumpvars(0);
    end  
+   */
    
    initial  begin 
    rst <= 1'b0;
