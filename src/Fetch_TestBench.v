@@ -33,10 +33,13 @@ module Fetch_testbench();
         pc_select_execute <= 1'b0;
         pc_target_execute <= 32'h00000000;
         
-        #100;
-        rst <= 1'b1;
-        #100;
-        $finish;
+       #100;
+       rst <= 1'b1;
+       #100;
+       rst <= 1'b0;
+       #100;
+       rst <= 1'b1;
+       #100;
     end
 
 endmodule
