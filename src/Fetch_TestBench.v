@@ -3,7 +3,7 @@
 module Fetch_testbench();
 
     reg clk, rst, pc_select_execute;
-  reg [31:0] pc_target_execute;
+    reg [31:0] pc_target_execute;
     wire [31:0] instruction_fetch, pc_fetch, next_pc_fetch;
 
     // Instantiate Fetch module
@@ -16,8 +16,8 @@ module Fetch_testbench();
         .pc_fetch(pc_fetch),
         .next_pc_fetch(next_pc_fetch)
     );
-  
-  	initial begin
+
+    initial begin
         clk = 1'b0; // Initialize clock to 0
     end
 
@@ -32,14 +32,14 @@ module Fetch_testbench();
         rst <= 1'b0;
         pc_select_execute <= 1'b0;
         pc_target_execute <= 32'h00000000;
-        
-       #100;
-       rst <= 1'b1;
-       #100;
-       rst <= 1'b0;
-       #100;
-       rst <= 1'b1;
-       #100;
+
+        #100;
+        rst <= 1'b1;
+        #100;
+        rst <= 1'b0;
+        #100;
+        rst <= 1'b1;
+        #100;
     end
 
 endmodule
