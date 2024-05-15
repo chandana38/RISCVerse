@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 // Code your design here
-module cntrl_block(
+module Contrl_Block(
 input rst,
 input [31:0] instr_reg_fetch,
 output reg [31:0] cntrl_sig_decode);
