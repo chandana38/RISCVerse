@@ -36,36 +36,28 @@ always #5 clk = ~clk;
 // Reset generation
 initial begin
     rst = 1;
-    #50;
+    #10
     rst = 0;
 end
 
-// Stimulus
-initial begin
-    // Provide some stimulus here
-    // Example: Set values for instr_reg_fetch, pc_fetch, npc_fetch, etc.
-    instr_reg_fetch = 32'h12345678;
-    pc_fetch = 32'hABCDEF01;
-    npc_fetch = 32'hABCDEF05;
-    cntrl_sig_decode = 32'h7;
-    alu_control_decode = 4'b0001;
-    imm_data_decodel = 32'h1234ABCD;
-    operand_a = 32'h1;
-    operand_b = 32'h2;
+always @(posedge clk)
+begin
     #10
-   // Wait for 100 clock cycles
-    instr_reg_fetch = 32'h11111111;
-    pc_fetch = 32'hABCDEF05;
-    npc_fetch = 32'hABCDEF09;
-    cntrl_sig_decode = 32'h7;
-    alu_control_decode = 4'b0010;
-    imm_data_decodel = 32'h1234ABCF;
-    operand_a = 32'h33;
-    operand_b = 32'h77;
-    #10
-    // Finish simulation
-    $finish;
+    instr_reg_fetch =  $random;
+    pc_fetch =  $random;
+    npc_fetch =  $random;
+    cntrl_sig_decode =  $random;
+    alu_control_decode =  $random;
+    imm_data_decodel =  $random;
+    operand_a =  $random;
+    operand_b =  $random;
 end
+
+initial
+begin
+    #100
+    $finish;
+   end
 
 endmodule
 
