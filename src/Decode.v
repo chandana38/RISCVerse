@@ -1,3 +1,6 @@
+
+
+
 `timescale 1ns / 1ps
 module decode1#( parameter data_width = 32)(
 input clk,
@@ -21,7 +24,7 @@ output reg  [31:0] operand_B);
 
 always @(posedge clk or negedge rst)
 begin
-	if(!rst)
+	if(rst)
 	begin
       instr_reg_decode <= 0;
 		pc_decode <= 0;
@@ -34,8 +37,8 @@ begin
 	else
 	begin
 		instr_reg_decode <= instr_reg_fetch;
-		pc_decode <= pc_fetch;
-		npc_decode <= npc_fetch;
+		pc_decode <= pc_fetch+4;
+		npc_decode <= npc_fetch+4;
 		cntrl_sig_decode_out <= cntrl_sig_decode;
 		alu_control_decode_out <= alu_control_decode;
 		imm_data_decode_out <= imm_data_decode;
