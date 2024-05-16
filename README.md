@@ -37,9 +37,13 @@ By utilizing RISC-V principles and pipelining techniques, we've demonstrated imp
 
 # Team Members
 Rehan Nasar (201EE243),
+
 Sanganabasu Herur (211EC245),
+
 L Chandana (211EE235),
+
 Chinmayee Nagaraj (221EC212),
+
 Suchet Nayak (221EE254)
 
 ## Acknowledgment: 
