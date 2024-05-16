@@ -36,17 +36,17 @@ By utilizing RISC-V principles and pipelining techniques, we've demonstrated imp
 [4] RISC-V Documentation, *Shakti Documentation*. [Online]. Available: https://shakti.org.in/documentation.html
 
 # Team Members
-Rehan Nasar (201EE243),
+Rehan Nasar (201EE243)
 
-Sanganabasu Herur (211EC245),
+Sanganabasu Herur (211EC245)
 
-L Chandana (211EE235),
+L Chandana (211EE235)
 
-Chinmayee Nagaraj (221EC212),
+Chinmayee Nagaraj (221EC212)
 
 Suchet Nayak (221EE254)
 
 ## Acknowledgment: 
-We extend our gratitude to Abhav S Velidi for his invaluable assistance throughout the design process.
+We extend our gratitude to Abhav S Velidi (Intel Corporation) for his invaluable assistance throughout the design process.
 
 *© 2024 RISCVerse Core Implementation Team. All rights reserved.*
