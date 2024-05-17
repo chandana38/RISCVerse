@@ -39,14 +39,9 @@ module TopFetchModule(
         .read_data(read_data)
     );
   
-  always @(rd_wr or pc_fetch) begin 
+  always @(pc_fetch) begin 
   instruction_fetch = read_data;
   end
-  
-  always @(posedge rst) begin
-    instruction_fetch = read_data;
-  end
-  
     
 endmodule
 
