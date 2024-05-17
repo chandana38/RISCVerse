@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module memory #(
+module Memory #(
     parameter data_width = 32,
     parameter addr_width = 32
 )(
