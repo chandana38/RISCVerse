@@ -21,30 +21,22 @@ module memory #(
         if (!rst)
         begin
             for (i = 0; i < 16384; i = i + 1)
-            begin
                 instr_mem[i] = 8'h0;
-            end
-            read_data <= 32'h0;
+            read_data = 32'h0;
         end
-        else
+        else if (mem_en && rd_wr)
         begin
-            if (mem_en)
-            begin
-                if (rd_wr)
-                begin
-                    read_data <= {instr_mem[read_addr+3], instr_mem[read_addr+2], instr_mem[read_addr+1], instr_mem[read_addr]};
-                end
-            end
-            else
-            begin
-                read_data <= read_data; // Not necessary, but added for clarity
-            end
+            read_data = {instr_mem[read_addr+3], instr_mem[read_addr+2], instr_mem[read_addr+1], instr_mem[read_addr]};
         end
     end
 
     always @(posedge clk or negedge rst)
     begin
-        if (!rd_wr)
+        if (!rst)
+        begin
+            // Handle synchronous reset if necessary
+        end
+        else if (mem_en && !rd_wr)
         begin
             instr_mem[write_addr]     <= write_data[7:0];
             instr_mem[write_addr + 1] <= write_data[15:8];
@@ -54,3 +46,4 @@ module memory #(
     end
 
 endmodule
+
