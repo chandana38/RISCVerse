@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module top_fetch1(
 	input clk,
 	input rst,
@@ -46,8 +48,6 @@ endmodule
 
 
 
-
-
 module Fetch(
 	input clk, rst,
 	input pc_select_execute,
@@ -74,7 +74,6 @@ always @(posedge clk or negedge rst) begin
 end
 
 endmodule
-
 
 
 module Memory #(
@@ -112,8 +111,7 @@ begin
 		instr_mem[write_addr + 1] <= write_data[15:8];
 		instr_mem[write_addr + 2] <= write_data[23:16];
 		instr_mem[write_addr + 3] <= write_data[31:24];
-        end
-       
+        end       
 end
 
 endmodule
