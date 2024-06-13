@@ -4,7 +4,7 @@ module write_back(input [31:0] alu_output,
                   input [31:0] instr_reg_fetch,
                   input [31:0] loaded_value,
                   input [31:0] cntrl_sig_decode,
-                  output reg [31:0] regs);
+                  output reg [31:0] instr_reg_fetch);
   
   always @(posedge clk)
     begin
