@@ -5,7 +5,7 @@ module reg_sign (
 	input [31:0] alu_control_decode,
 	output [31:0] operand_a,
 	output [31:0] operand_b,
-	output [31:0] imm_data_decode
+	output [31:0] imm
 	);
 	
 register_bank reg_bank_inst(
@@ -20,7 +20,7 @@ register_bank reg_bank_inst(
 sign_extension sign_ext_inst(
 	.rst(rst),
 	.instr_reg_fetch(instr_reg_fetch),
-	.imm_data_decode(imm_data_decode)
+	.imm(imm)
 	);
 
 endmodule
@@ -67,7 +67,7 @@ endmodule
 module sign_extension(
 	input rst,
 	input [31:0] instr_reg_fetch,
-	output reg [31:0] imm_data_decode
+	output reg [31:0] imm
 	);
 
 	parameter r_type = 7'b0110011;
@@ -78,16 +78,16 @@ module sign_extension(
 
 always@(*) begin
 	if(!rst) begin
-		imm_data_decode = 32'h0;
+		imm = 32'h0;
 	end
 	else begin
 		case(instr_reg_fetch[6:0])
-			r_type: imm_data_decode = 32'h0; //no imm data 
-		        i_type: imm_data_decode = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};
-		        s_type: imm_data_decode = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:25],instr_reg_fetch[11:7]};
-			b_type: imm_data_decode  = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31],instr_reg_fetch[7],instr_reg_fetch[30:25],instr_reg_fetch[11:8]};		
-		        l_type:  imm_data_decode = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};
-			default: imm_data_decode = 32'h0;
+			r_type: imm = 32'h0; //no imm data 
+		        i_type: imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};
+		        s_type: imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:25],instr_reg_fetch[11:7]};
+			b_type: imm  = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31],instr_reg_fetch[7],instr_reg_fetch[30:25],instr_reg_fetch[11:8]};		
+		        l_type:  imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};
+			default: imm = 32'h0;
 		endcase
 	end
 end
