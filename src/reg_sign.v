@@ -85,8 +85,8 @@ always@(*) begin
 			r_type: imm = 32'h0; //no imm data 
 		        i_type: imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};
 		        s_type: imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:25],instr_reg_fetch[11:7]};
-			b_type: imm  = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31],instr_reg_fetch[7],instr_reg_fetch[30:25],instr_reg_fetch[11:8]};		
-		        l_type:  imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};
+			b_type: imm  = {{20{instr_reg_fetch[31]}},instr_reg_fetch[7],instr_reg_fetch[30:25],instr_reg_fetch[11:8],0};		
+			l_type:  imm = {{20{instr_reg_fetch[31]}},instr_reg_fetch[31:20]};                                 // is this fine?
 			default: imm = 32'h0;
 		endcase
 	end
