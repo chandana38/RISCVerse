@@ -72,8 +72,8 @@ module sign_extension(
 
 	parameter r_type = 7'b0110011;
 	parameter i_type = 7'b0010011;
-	parameter b_type = 7'b1100011;
 	parameter s_type = 7'b0100011;
+	parameter b_type = 7'b1100011;
 	parameter l_type = 7'b0000011;
 
 always@(*) begin
