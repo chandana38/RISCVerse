@@ -36,7 +36,6 @@ By utilizing RISC-V principles and pipelining techniques, we've demonstrated imp
 [4] RISC-V Documentation, *Shakti Documentation*. [Online]. Available: https://shakti.org.in/documentation.html
 
 # Team Members
-Rehan Nasar (201EE243)
 
 Sanganabasu Herur (211EC245)
 
